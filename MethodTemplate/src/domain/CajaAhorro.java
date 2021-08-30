@@ -7,6 +7,6 @@ public class CajaAhorro extends Cuenta {
 
     @Override
     public float descontarComision() {
-        return this.comision / 100;
+        return this.comision / 100.0f;
     }
 }

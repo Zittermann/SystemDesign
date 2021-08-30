@@ -18,7 +18,7 @@ public abstract class Cuenta {
         this.comision = comision;
     }
 
-    public void transferir(Cuenta destino, float monto) {
+    public final void transferir(Cuenta destino, float monto) {
 
         float comisionIncluida = monto + (monto * descontarComision());
 
