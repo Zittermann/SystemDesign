@@ -1,6 +1,6 @@
 package domain;
 
-public class BancoImpl implements IBanco {
+public class ImpuestoStrategy implements IBancoStrategy {
 
 
     @Override
