@@ -8,7 +8,6 @@ public abstract class Participante {
 
     public abstract double ofertar(Producto producto);
 
-
     public Participante(String nombre, double ofertaMasReciente) {
         this.nombre = nombre;
         this.ofertaMasReciente = ofertaMasReciente;

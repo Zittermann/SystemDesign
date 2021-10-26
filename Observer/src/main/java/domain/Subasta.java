@@ -4,11 +4,21 @@ import java.util.ArrayList;
 
 public class Subasta {
 
-    public void subastar(Producto producto, ArrayList<Participante> participantes) {
+    ArrayList<Participante> participantesList;
+
+    public void add(Participante participante){
+        participantesList.add(participante);
+    }
+
+    public void remove(Participante participante){
+        participantesList.remove(participante);
+    }
+
+    public void subastar(Producto producto) {
 
         while (producto.getMayorOferta() < producto.getPrecioMaximo()) {
 
-            participantes.forEach(participante -> {
+            participantesList.forEach(participante -> {
 
                 double nuevaOferta = participante.ofertar(producto);
 
