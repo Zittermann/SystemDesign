@@ -11,7 +11,7 @@ public class ImpuestoStrategy implements IBancoStrategy {
         if (origen.getSaldo() >= comisionIncluida) {
             origen.restarSaldo(comisionIncluida);
             destino.agregarSaldo(monto);
-            System.out.printf("Se han transferido [" + monto + "]" + " con exito\n");
-        } else System.err.printf("Error: Saldo insuficiente\n");
+            System.out.println("Se han transferido [" + monto + "]" + " con exito\n");
+        } else System.err.println("Error: Saldo insuficiente\n");
     }
 }

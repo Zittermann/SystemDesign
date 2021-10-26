@@ -14,8 +14,6 @@ public class TestBanco {
         Banco banco = new Banco();
         banco.setBancoStrategy(new ImpuestoStrategy());
 
-
-
         banco.ejecutar(cuenta1, cuenta2, 2500);
 
 
