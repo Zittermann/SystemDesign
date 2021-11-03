@@ -1,10 +1,17 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Subasta {
 
-    ArrayList<Participante> participantesList;
+    List<Participante> participantesList;
+    private double precioActual;
+    private Participante ganador;
+
+    public Subasta() {
+        this.participantesList = new ArrayList<>();
+    }
 
     public void add(Participante participante){
         participantesList.add(participante);
@@ -14,26 +21,26 @@ public class Subasta {
         participantesList.remove(participante);
     }
 
-    public void subastar(Producto producto) {
+    public void subastar(Producto producto, double precioMaximo) {
 
-        while (producto.getMayorOferta() < producto.getPrecioMaximo()) {
+        this.precioActual = producto.getPrecio();
+
+        while (precioActual < precioMaximo) {
 
             participantesList.forEach(participante -> {
 
-                double nuevaOferta = participante.ofertar(producto);
+                this.precioActual = participante.ofertar(precioActual);
+                System.out.println("Oferta: " + precioActual);
 
-                System.out.println(nuevaOferta);
-
-                if (nuevaOferta > producto.getMayorOferta()) {
-                    producto.setMayorOferta(nuevaOferta);
-                    producto.setGanador(participante.getNombre());
+                if(this.precioActual > precioMaximo){
+                    this.ganador = participante;
                 }
 
             });
 
         }
 
-        System.out.println("El ganador: [" + producto.getGanador() + "] ofrecio: [" + producto.getMayorOferta() + "]");
+        System.out.println("Se ofrecio: [" + this.precioActual + "] por: ["+ producto.getNombre()+"]");
 
     }
 

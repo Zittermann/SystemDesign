@@ -1,16 +1,11 @@
 package domain;
 
-public class ImplParticipanteSuma extends Participante {
+public class ImplParticipanteSuma implements Participante {
+
 
     @Override
-    public double ofertar(Producto producto) {
-        this.ofertaMasReciente += 100d;
-
-        return this.ofertaMasReciente;
-    }
-
-    public ImplParticipanteSuma(String nombre, double ofertaMasReciente) {
-        super(nombre, ofertaMasReciente);
+    public double ofertar(double precio) {
+        return precio + 100d;
     }
 
 }

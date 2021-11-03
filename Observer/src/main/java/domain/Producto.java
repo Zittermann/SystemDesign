@@ -3,38 +3,20 @@ package domain;
 public class Producto {
 
     private String nombre;
-    private double precioInicial;
-    private double precioMaximo;
-    private double mayorOferta = 0;
-    private String ganador;
+    private double precio;
 
-    public Producto(String nombre, double precioInicial, double precioMaximo) {
+    public Producto(String nombre, double precio) {
         this.nombre = nombre;
-        this.precioInicial = precioInicial;
-        this.precioMaximo = precioMaximo;
+        this.precio = precio;
     }
 
-    public double getPrecioInicial() {
-        return precioInicial;
+    public String getNombre() {
+        return nombre;
     }
 
-    public double getPrecioMaximo() {
-        return precioMaximo;
+
+    public double getPrecio() {
+        return precio;
     }
 
-    public double getMayorOferta() {
-        return mayorOferta;
-    }
-
-    public void setMayorOferta(double mayorOferta) {
-        this.mayorOferta = mayorOferta;
-    }
-
-    public String getGanador() {
-        return ganador;
-    }
-
-    public void setGanador(String ganador) {
-        this.ganador = ganador;
-    }
 }
