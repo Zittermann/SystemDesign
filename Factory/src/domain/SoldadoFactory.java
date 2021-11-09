@@ -2,16 +2,12 @@ package domain;
 
 public class SoldadoFactory {
 
-    public Soldado crearSoldado(String tipoSoldado){
+    public Soldado crearGuerrero(){
+        return new Guerrero();
+    }
 
-        if(tipoSoldado.equals("G")){
-            return new Guerrero();
-
-        } else if(tipoSoldado.equals("M")){
-            return new Mosquetero();
-
-        } else return null;
-
+    public Soldado crearMosquetero(){
+        return new Mosquetero();
     }
 
 }
