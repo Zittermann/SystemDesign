@@ -1,14 +1,17 @@
 package domain;
 
+
 public class Unidad {
+
+    private static UnidadFlyFactory factory = new UnidadFlyFactory();
 
     private UnidadFly unidadFly;
     private int coordenadaX;
     private int coordenadaY;
     private int saludActual;
 
-    public Unidad(UnidadFly unidadFly, int coordenadaX, int coordenadaY) {
-        this.unidadFly = unidadFly;
+    public Unidad(String tipoUnidad, int coordenadaX, int coordenadaY) {
+        this.unidadFly = factory.getFly(tipoUnidad);
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
         this.saludActual = unidadFly.getSalud();

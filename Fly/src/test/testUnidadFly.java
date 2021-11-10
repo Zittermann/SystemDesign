@@ -10,9 +10,9 @@ public class testUnidadFly {
 
         UnidadFlyFactory factory = new UnidadFlyFactory();
 
-        Unidad guerrero1 = new Unidad(factory.getFly("Guerrero"), coordenadaX, coordenadaY);
-        Unidad guerrero2 = new Unidad(factory.getFly("Guerrero"), coordenadaX, coordenadaY);
-        Unidad mago1 = new Unidad(factory.getFly("Mago"), coordenadaX, coordenadaY);
+        Unidad guerrero1 = new Unidad("Guerrero", coordenadaX, coordenadaY);
+        Unidad guerrero2 = new Unidad("Guerrero", coordenadaX, coordenadaY);
+        Unidad mago1 = new Unidad("Mago", coordenadaX, coordenadaY);
 
         System.out.println(guerrero1.getUnidadFly());
         System.out.println(guerrero2.getUnidadFly());
